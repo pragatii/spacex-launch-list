@@ -69,7 +69,7 @@ function Home(props) {
 
     const [cards, setCards] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
-    const [filters, setFilters] = React.useState({limit: 50});
+    const [filters, setFilters] = React.useState({limit: 100});
 
     const apiCall = () => {
         setIsLoading(true);
