@@ -29,7 +29,7 @@ function App() {
     return (
         <BrowserRouter>
             <ThemeProvider theme={theme}>
-                <Box display={'flex'} flexDirection={'column'}>
+                <Box className={'rootContainer'} display={'flex'} flexDirection={'column'}>
                     <Typography component={'h1'} variant={'h4'}>
                         SpaceX Launch Programs
                     </Typography>

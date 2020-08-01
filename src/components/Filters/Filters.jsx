@@ -20,8 +20,8 @@ const styles = theme => ({
     },
     optionItem: {
         margin: '0.25rem',
-        flexBasis: 'calc(45% - 0.5rem)',
-        maxWidth: '70px',
+        flexBasis: 'calc(50% - 0.5rem)',
+        // maxWidth: '70px',
         borderRadius: '5px',
         width: 'calc(50% - 0.5rem)'
     }

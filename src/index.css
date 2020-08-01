@@ -16,3 +16,11 @@ code {
 .MuiChip-clickableColorSecondary:hover, .MuiChip-clickableColorSecondary:focus, .selected {
     background: rgba(137, 183, 56, 1) !important;
 }
+
+
+@media (min-width: 1440px) {
+    .rootContainer {
+        align-items: center
+
+    }
+}

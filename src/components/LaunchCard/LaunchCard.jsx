@@ -1,11 +1,11 @@
-import {makeStyles} from "@material-ui/styles";
 import * as React from 'react';
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import {withStyles} from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = theme => ({
     root: {
         minHeight: '420px'
     },
@@ -17,14 +17,16 @@ const useStyles = makeStyles({
         backgroundColor: 'rgba(242, 242, 242, 1)',
         width: '80%',
         objectFit: 'contain',
-        marginTop: '1rem'
+        marginTop: '1rem',
+        [theme.breakpoints.down(1440)]: {
+            marginLeft: '10%'
+
+        }
     },
 });
 
-export default function RecipeReviewCard(props) {
-    const {mission_name, flight_number, mission_id, launch_year, launch_success, rocket, links} = props;
-
-    const classes = useStyles();
+function LaunchCard(props) {
+    const {mission_name, flight_number, mission_id, launch_year, launch_success, rocket, links, classes} = props;
 
     return (
         <Card className={classes.root} elevation={0}>
@@ -66,3 +68,5 @@ export default function RecipeReviewCard(props) {
         </Card>
     );
 }
+
+export default withStyles(useStyles)(LaunchCard);
