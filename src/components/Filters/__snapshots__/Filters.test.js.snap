@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`should be possible to activate button with Spacebar 1`] = `ReactWrapper {}`;
+
+exports[`should mount the component with all props 1`] = `ReactWrapper {}`;
