@@ -1,6 +1,5 @@
 import {Box, Divider, Typography, withStyles} from "@material-ui/core";
 import * as React from 'react';
-import {useState} from 'react';
 import Chip from "@material-ui/core/Chip";
 import classnames from 'classnames';
 
@@ -27,12 +26,9 @@ const styles = theme => ({
 });
 
 function Filters(props) {
-    const {title, options, classes, onSelect} = props;
-
-    const [selectedOption, setSelectedOption] = useState();
+    const {title, options, classes, onSelect, selectedFilter} = props;
 
     const handleClick = (option) => {
-        setSelectedOption(option);
         onSelect(option)
     };
 
@@ -45,7 +41,7 @@ function Filters(props) {
             <br/>
             <Box className={classes.options}>
                 {options.map(option => <Chip onClick={e => handleClick(option)}
-                                             className={classnames(classes.optionItem, {selected: option === selectedOption})}
+                                             className={classnames(classes.optionItem, {selected: option === selectedFilter})}
                                              label={option} color={'secondary'}/>)}
             </Box>
         </Box>

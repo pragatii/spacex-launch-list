@@ -24,8 +24,6 @@ export default function RecipeReviewCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
-    console.log(rocket.first_stage.cores[0]);
-
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };

@@ -3,6 +3,7 @@ import './App.css';
 import {createMuiTheme} from "@material-ui/core";
 import Home from "./components/Home/Home";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     const theme = createMuiTheme({
@@ -24,9 +25,11 @@ function App() {
     });
 
     return (
-        <ThemeProvider theme={theme}>
-            <Home/>
-        </ThemeProvider>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <Home/>
+            </ThemeProvider>
+        </BrowserRouter>
     );
 }
 
