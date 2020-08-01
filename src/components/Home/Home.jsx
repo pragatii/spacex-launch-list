@@ -8,6 +8,7 @@ const styles = theme => ({
     root: {
         padding: theme.spacing(1),
         display: 'flex',
+        justifyContent: 'space-between',
         [theme.breakpoints.down(700)]: {
             flexDirection: 'column'
         },
@@ -16,12 +17,33 @@ const styles = theme => ({
         }
     },
     filters: {
-        flexBasis: '20%'
+        flexBasis: '10%',
+        display: 'flex',
+        flexDirection: 'column',
+        background: 'white',
+        [theme.breakpoints.down(700)]: {
+            flexBasis: '15%',
+        },
+        [theme.breakpoints.between(700, 1024)]: {
+            flexBasis: '15%',
+        },
+        [theme.breakpoints.up(1024)]: {
+            flexBasis: '10%',
+        }
     },
     launchCard: {
-        flexBasis: '80%',
+        flexBasis: '85%',
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        [theme.breakpoints.down(700)]: {
+            flexBasis: '80%',
+        },
+        [theme.breakpoints.between(700, 1024)]: {
+            flexBasis: '80%',
+        },
+        [theme.breakpoints.up(1024)]: {
+            flexBasis: '85%',
+        }
     },
     launchCardItem: {
         [theme.breakpoints.down(700)]: {
@@ -48,8 +70,19 @@ function Home(props) {
     return (
         <Box className={classes.root}>
             <Box className={classes.filters}>
-                <Filters title={'Launch Year'}
-                         options={[2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]}/>
+                <Box marginBottom={1}>
+                    <Filters title={'Launch Year'}
+                             onSelect={option => console.log(option)}
+                             options={[2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]}/>
+                </Box>
+                <Box marginBottom={1}>
+                    <Filters title={'Successful Launch'}
+                             options={['Yes', 'No']}/>
+                </Box>
+                <Box marginBottom={1}>
+                    <Filters title={'Successful Landing'}
+                             options={['Yes', 'No']}/>
+                </Box>
             </Box>
             <Box className={classes.launchCard}>
                 {

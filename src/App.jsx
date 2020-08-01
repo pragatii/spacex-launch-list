@@ -13,6 +13,14 @@ function App() {
                 desktop: 1440,
             },
         },
+        palette: {
+            primary: {
+                main: '#4a5390'
+            },
+            secondary: {
+                main: '#c6d99f'
+            }
+        }
     });
 
     return (
