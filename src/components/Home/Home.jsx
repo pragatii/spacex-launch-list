@@ -26,14 +26,17 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column',
         background: 'white',
+        height: 'fit-content',
+        marginTop: '0.5rem',
+         borderRadius: '4px',
         [theme.breakpoints.down(700)]: {
-            flexBasis: '15%',
+            flexBasis: '18%',
         },
         [theme.breakpoints.between(700, 1024)]: {
-            flexBasis: '15%',
+            flexBasis: '18%',
         },
         [theme.breakpoints.up(1024)]: {
-            flexBasis: '10%',
+            flexBasis: '12%',
         }
     },
     launchCard: {
@@ -41,13 +44,13 @@ const styles = theme => ({
         display: 'flex',
         flexWrap: 'wrap',
         [theme.breakpoints.down(700)]: {
-            flexBasis: '80%',
+            flexBasis: '77%',
         },
         [theme.breakpoints.between(700, 1024)]: {
-            flexBasis: '80%',
+            flexBasis: '77%',
         },
         [theme.breakpoints.up(1024)]: {
-            flexBasis: '85%',
+            flexBasis: '83%',
         }
     },
     launchCardItem: {

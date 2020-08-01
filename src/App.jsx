@@ -4,6 +4,8 @@ import {createMuiTheme} from "@material-ui/core";
 import Home from "./components/Home/Home";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import {BrowserRouter} from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 function App() {
     const theme = createMuiTheme({
@@ -27,7 +29,15 @@ function App() {
     return (
         <BrowserRouter>
             <ThemeProvider theme={theme}>
-                <Home/>
+                <Box display={'flex'} flexDirection={'column'}>
+                    <Typography component={'h1'} variant={'h4'}>
+                        SpaceX Launch Programs
+                    </Typography>
+                    <Home/>
+                    <Typography style={{textAlign: "center"}}>
+                        Developed By: Pragati Shekhar
+                    </Typography>
+                </Box>
             </ThemeProvider>
         </BrowserRouter>
     );

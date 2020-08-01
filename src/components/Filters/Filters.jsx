@@ -16,12 +16,14 @@ const styles = theme => ({
     options: {
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'space-between'
     },
     optionItem: {
         margin: '0.25rem',
-        flexBasis: 'calc(50% - 0.5rem)',
+        flexBasis: 'calc(45% - 0.5rem)',
         maxWidth: '70px',
         borderRadius: '5px',
+        width: 'calc(50% - 0.5rem)'
     }
 });
 
