@@ -13,6 +13,6 @@ code {
     monospace;
 }
 
-.MuiChip-clickableColorSecondary:hover, .MuiChip-clickableColorSecondary:focus {
+.MuiChip-clickableColorSecondary:hover, .MuiChip-clickableColorSecondary:focus, .selected {
     background: rgba(137, 183, 56, 1) !important;
 }

@@ -28,7 +28,7 @@ const styles = theme => ({
         background: 'white',
         height: 'fit-content',
         marginTop: '0.5rem',
-         borderRadius: '4px',
+        borderRadius: '4px',
         [theme.breakpoints.down(700)]: {
             flexBasis: '18%',
         },
@@ -100,9 +100,53 @@ function Home(props) {
         setFilters({
             ...filters,
             ...[...query.entries()].reduce((a, b) => {
+                const key = b[0];
+                let value;
+
+                switch (key) {
+                    case 'launch_year':
+                        value = +b[1];
+                        break;
+                    case 'launch_success':
+                        value = b[1] === 'true';
+                        break;
+                    case 'land_success':
+                        value = b[1] === 'true';
+                        break;
+                    default:
+                        console.log('Other key', key);
+                }
+
                 return {
                     ...a,
-                    [b[0]]: b[1]
+                    [key]: value
+                };
+            }, {}),
+            limit: 100
+        });
+        console.log({
+            ...filters,
+            ...[...query.entries()].reduce((a, b) => {
+                const key = b[0];
+                let value;
+
+                switch (key) {
+                    case 'launch_year':
+                        value = +b[1];
+                        break;
+                    case 'launch_success':
+                        value = b[1] === 'true';
+                        break;
+                    case 'land_success':
+                        value = b[1] === 'true';
+                        break;
+                    default:
+                        console.log('Other key', key);
+                }
+
+                return {
+                    ...a,
+                    [key]: value
                 };
             }, {}),
             limit: 100
@@ -125,6 +169,8 @@ function Home(props) {
             limit: 100
         };
 
+        console.log(updatedFilters);
+
         setFilters(updatedFilters);
 
         const urlParams = new URLSearchParams(updatedFilters).toString();
@@ -143,13 +189,13 @@ function Home(props) {
                 </Box>
                 <Box marginBottom={1}>
                     <Filters title={'Successful Launch'}
-                             selectedFilter={filters.launch_success}
+                             selectedFilter={filters.launch_success ? 'Yes' : 'No'}
                              onSelect={option => handleFilterChange({launch_success: option === 'Yes'})}
                              options={['Yes', 'No']}/>
                 </Box>
                 <Box marginBottom={1}>
                     <Filters title={'Successful Landing'}
-                             selectedFilter={filters.land_success}
+                             selectedFilter={filters.land_success ? 'Yes' : 'No'}
                              onSelect={option => handleFilterChange({land_success: option === 'Yes'})}
                              options={['Yes', 'No']}/>
                 </Box>
