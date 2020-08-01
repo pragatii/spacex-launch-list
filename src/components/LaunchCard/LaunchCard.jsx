@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 });
 
 export default function RecipeReviewCard(props) {
-    const {mission_name, flight_number, mission_id, launch_year, launch_success, rocket} = props;
+    const {mission_name, flight_number, mission_id, launch_year, launch_success, rocket, links} = props;
 
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -30,21 +30,22 @@ export default function RecipeReviewCard(props) {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    title="Contemplative Reptile"
+                    image={links.mission_patch_small}
+                    title="{flight_number}"
+                    style={{fit: 'cover'}}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2" color={"primary"}>
-                        FalconSet #1
+                        {mission_name} #{flight_number}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
                         Mission Ids:
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Launch year:
+                        Launch year: {launch_year}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Successful Launch:
+                        Successful Launch: {launch_success}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
                         Successful Landing:
