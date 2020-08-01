@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from "@material-ui/core/Box";
 import Filters from "../Filters/Filters";
 import LaunchCard from "../LaunchCard/LaunchCard";
-import {withStyles} from "@material-ui/core";
+import {Typography, withStyles} from "@material-ui/core";
 import * as Axios from 'axios';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {useHistory, useLocation} from 'react-router-dom';
@@ -181,6 +181,7 @@ function Home(props) {
     return (
         <Box className={classes.root}>
             <Box className={classes.filters}>
+                <Typography style={{textAlign: 'left', marginLeft: '1rem'}} variant={'h6'} component={'p'}>Filters</Typography>
                 <Box marginBottom={1}>
                     <Filters title={'Launch Year'}
                              selectedFilter={filters.launch_year}
