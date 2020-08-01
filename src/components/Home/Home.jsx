@@ -33,10 +33,10 @@ const styles = theme => ({
             flexBasis: '18%',
         },
         [theme.breakpoints.between(700, 1024)]: {
-            flexBasis: '18%',
+            flexBasis: '25%',
         },
         [theme.breakpoints.up(1024)]: {
-            flexBasis: '12%',
+            flexBasis: '18%',
         }
     },
     launchCard: {
