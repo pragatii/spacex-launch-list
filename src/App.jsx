@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import {createMuiTheme} from "@material-ui/core";
 import Home from "./components/Home/Home";
-import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import {BrowserRouter} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 
 function App() {
     const theme = createMuiTheme({
