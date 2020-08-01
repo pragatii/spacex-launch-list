@@ -3,7 +3,6 @@ import Box from "@material-ui/core/Box";
 import Filters from "../Filters/Filters";
 import LaunchCard from "../LaunchCard/LaunchCard";
 import {withStyles} from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
     root: {
@@ -31,10 +30,7 @@ const styles = theme => ({
         [theme.breakpoints.between(700, 1024)]: {
             flexBasis: 'calc(50% - 2rem)',
         },
-        [theme.breakpoints.between(1024, 1440)]: {
-            flexBasis: 'calc(25% - 2rem)',
-        },
-        [theme.breakpoints.up(1440)]: {
+        [theme.breakpoints.up(1024)]: {
             flexBasis: 'calc(25% - 2rem)',
         }
     }
