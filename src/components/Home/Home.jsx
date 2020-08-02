@@ -102,34 +102,6 @@ function Home(props) {
             ...[...query.entries()].reduce((a, b) => {
                 const key = b[0];
                 let value;
-
-                switch (key) {
-                    case 'launch_year':
-                        value = +b[1];
-                        break;
-                    case 'launch_success':
-                        value = b[1] === 'true';
-                        break;
-                    case 'land_success':
-                        value = b[1] === 'true';
-                        break;
-                    default:
-                        console.log('Other key', key);
-                }
-
-                return {
-                    ...a,
-                    [key]: value
-                };
-            }, {}),
-            limit: 100
-        });
-        console.log({
-            ...filters,
-            ...[...query.entries()].reduce((a, b) => {
-                const key = b[0];
-                let value;
-
                 switch (key) {
                     case 'launch_year':
                         value = +b[1];
@@ -178,6 +150,18 @@ function Home(props) {
         history.push({pathname: '/', search: '?' + urlParams});
     };
 
+    const getSelectedFilter = (key) => {
+        if(key !== undefined) {
+            if (key) {
+                return 'Yes';
+            } else {
+                return 'No';
+            }
+        } else {
+            return undefined;
+        }
+    }
+
     return (
         <Box className={classes.root}>
             <Box className={classes.filters}>
@@ -190,13 +174,13 @@ function Home(props) {
                 </Box>
                 <Box marginBottom={1}>
                     <Filters title={'Successful Launch'}
-                             selectedFilter={filters.launch_success ? 'Yes' : 'No'}
+                             selectedFilter={getSelectedFilter(filters.launch_success)}
                              onSelect={option => handleFilterChange({launch_success: option === 'Yes'})}
                              options={['Yes', 'No']}/>
                 </Box>
                 <Box marginBottom={1}>
                     <Filters title={'Successful Landing'}
-                             selectedFilter={filters.land_success ? 'Yes' : 'No'}
+                             selectedFilter={getSelectedFilter(filters.land_success)}
                              onSelect={option => handleFilterChange({land_success: option === 'Yes'})}
                              options={['Yes', 'No']}/>
                 </Box>
